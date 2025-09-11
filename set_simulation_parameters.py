@@ -10,7 +10,6 @@ def set_simulation_parameters(gamma, Qf, cpg, Ea):
     params['s'] = 15.0 / params['phi']
     params['Qmix'] = params['Qf'] / (1 + params['s'])
     params['latentv'] = 260628
-    params['B'] = 5.0e6
     params['Ea'] = Ea
     params['rd0'] = 5.0e-6
     params['T1'] = 298
