@@ -19,8 +19,10 @@ print(input_params)
 try:
     # The function will run the simulation and return the results
     results = SprayModel(input_params)
+    if not results:
+        print(f"\n\033[97;41m ERROR: Simulation failed! Aborting ... \033[0m")
+        exit()
 
-    # Print results
     print((f"\n\033[97;42m {'Final simulation successful! Displaying results...'} \033[0m\n"))
     print(results)
 
