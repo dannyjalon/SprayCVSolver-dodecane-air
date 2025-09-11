@@ -71,10 +71,8 @@ Step: Default is 10. Used for the artifact filtration function (parameter optimi
 * Monitor the Solver: The script will try to run the simulation with the provided target values. If it fails, an error will be raised and the loss function will manually set to an extremely high value. After the simulation is complete, the script will analyze the image to determine the cell size.
 
 * View Results: The solver prints two key outputs:
-
-A dictionary of the final predicted model values (DCJ_pred, TvN_pred, etc.).
-
-A final combined loss value, displayed on a red background, which quantifies the model's error against the experimental/numerical data.
+* A dictionary of the final predicted model values (DCJ_pred, TvN_pred, etc.).
+* A final combined loss value, displayed on a red background, which quantifies the model's error against the experimental/numerical data.
 
 5. File Structure
 run.py: Main execution script. Handles user input, calls the image analysis and simulation modules, and calculates the final loss.
