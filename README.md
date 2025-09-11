@@ -48,7 +48,8 @@ Step-by-step instructions:
 python run.py
 
 * Provide target parameters into "input_params", for example:
-* input_params = {
+
+  input_params = {
     'DCJ_target': 1805.0,   # Target CJ velocity [m/s]
     'TvN_target': 1689.0,   # Target von Neumann temperature [K]
     'TCJ_target': 2875.0,   # Target CJ temperature [K]
