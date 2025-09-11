@@ -4,14 +4,14 @@
 
 This project provides a comprehensive suite for the one-dimensional numerical simulation of two-phase (liquid spray/gas) detonations. It implements a ZND model that accounts for droplet evaporation and simplified one-step chemical kinetics.
 
-The suite receives the following target value parameters, either from experiments or numerical simulations, and runs a calibration procedure to best match these values.   
+The suite receives the following target value parameters, either from experiments or numerical simulations, and runs a calibration procedure to best match these values:
 * Detonation velocity, Dcj, in m/s.
 * von Neumann temperature, TvN, in K.
 * Chapman-Jouguet temperature, Tcj, in K.
 * Induction length, Lind, in mm.
 * Activation Energy, Ea, in J/mol.
 
-The suite also receives an image of the soot foil (experiments or numerical) and measures the mean cell height or width.  
+The suite also receives the target cell size (height or width) in centimeters.
 
 2. Features
 * 1D Two-Phase ZND Model: Simulates the detonation structure, including gas and droplet phases.
@@ -37,36 +37,31 @@ You can install all dependencies at once by creating a requirements.txt file wit
 pip install -r requirements.txt
 
 4. How to Use
+   
 The entire analysis is orchestrated through the main driver script, run.py.
 
 Step-by-step instructions:
-
 * Navigate to the Directory: Open a terminal and navigate to the root directory of the project.
-
 * Execute the Script: Run the following command:
-
-python run.py
-
-* Provide target parameters into "input_params" inside 'run.py', for example:
-```python
-  input_params = {
-    'DCJ_target': 1805.0,   # Target CJ velocity [m/s]
-    'TvN_target': 1689.0,   # Target von Neumann temperature [K]
-    'TCJ_target': 2875.0,   # Target CJ temperature [K]
-    'Ea': 5546,             # Activation energy [J/mol]
-    'Lind_target': 20.096,  # Target induction length [mm]
-    'cell_size_target': 17  # Target Cell Size [cm]
-}
-```
-* Provide Image Analysis Input: 
-
-Image Path: Provide the full, absolute path to your .png or .jpg soot foil image.
-
-Dimension: Enter h or w depending on whether the known physical size corresponds to the image's height or width.
-
-Physical Size: Enter the known physical size in centimeters (e.g., 50.0).
-
-Step: Default is 10. Used for the artifact filtration function (parameter optimization). Default value is 10. Decreasing the step size may provide better results but will increase the running time, and vice versa.
+  * python run.py
+  * Provide target parameters into "input_params" inside 'run.py', for example:
+    
+      ```python
+        input_params = {
+          'DCJ_target': 1805.0,   # Target CJ velocity [m/s]
+          'TvN_target': 1689.0,   # Target von Neumann temperature [K]
+          'TCJ_target': 2875.0,   # Target CJ temperature [K]
+          'Ea': 5546,             # Activation energy [J/mol]
+          'Lind_target': 20.096,  # Target induction length [mm]
+          'cell_size_target': 17  # Target Cell Size [cm]
+      }
+      ```
+      
+  * Provide Image Analysis Input:
+      * **Image Path** : Provide the full, absolute path to your .png or .jpg soot foil image.
+      * **Dimension**: Enter h or w depending on whether the known physical size corresponds to the image's height or width.
+      * **Physical Size**: Enter the known physical size in centimeters (e.g., 50.0).
+      * **Step**: Default is 10. Used for the artifact filtration function (parameter optimization). Default value is 10. Decreasing the step size may provide better results but will increase the running time, and vice versa.
 
 * Monitor the Solver: The script will try to run the simulation with the provided target values. If it fails, an error will be raised and the loss function will manually set to an extremely high value. After the simulation is complete, the script will analyze the image to determine the cell size.
 
