@@ -75,15 +75,16 @@ Step: Default is 10. Used for the artifact filtration function (parameter optimi
   * A final combined loss value, displayed on a red background, which quantifies the model's error against the experimental/numerical data.
 
 5. File Structure
-run.py: Main execution script. Handles user input, calls the image analysis and simulation modules, and calculates the final loss.
 
-spray.py: The core simulation library. Contains the SprayModel function which orchestrates the B-factor solver.
+* run.py: Main execution script. Handles user input, calls the image analysis and simulation modules, and calculates the final loss.
 
-soot_foil_image_tool.py: The computer vision module for analyzing soot foils.
+* spray.py: The core simulation library. Contains the SprayModel function which orchestrates the B-factor solver.
 
-state_vector_derivatives.py: Defines the system of ordinary differential equations (ODEs) for the ZND model.
+* soot_foil_image_tool.py: The computer vision module for analyzing soot foils.
 
-cal1.py / cal2.py: Helper scripts to determine thermodynamic properties and activation energy.
+* state_vector_derivatives.py: Defines the system of ordinary differential equations (ODEs) for the ZND model.
 
-post_shock_conditions.py, set_initial_conditions.py, etc.: Other helper modules for the simulation setup.
+* cal1.py / cal2.py: Helper scripts to determine thermodynamic properties and activation energy.
+
+* post_shock_conditions.py, set_initial_conditions.py, etc.: Other helper modules for the simulation setup.
 
