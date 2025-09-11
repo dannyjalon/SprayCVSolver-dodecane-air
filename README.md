@@ -47,15 +47,21 @@ Step-by-step instructions:
 
 python run.py
 
-* Provide target parameters into "input_params", for example:
+* Provide target parameters into "input_params" inside 'run.py', for example:
 
   input_params = {
     'DCJ_target': 1805.0,   # Target CJ velocity [m/s]
+  
     'TvN_target': 1689.0,   # Target von Neumann temperature [K]
+  
     'TCJ_target': 2875.0,   # Target CJ temperature [K]
+  
     'Ea': 5546,             # Activation energy [J/mol]
+  
     'Lind_target': 20.096,   # Target induction length [mm]
+  
     'cell_size_target': 17  # Target Cell Size [cm]
+  
 }
 
 * Provide Image Analysis Input: 
