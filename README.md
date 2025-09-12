@@ -9,7 +9,7 @@ The suite receives the following target value parameters, either from experiment
 * von Neumann temperature, TvN, in K.
 * Chapman-Jouguet temperature, Tcj, in K.
 * Induction length, Lind, in mm.
-* Activation Energy, Ea, in J/mol.
+* Pre exponential parameter, B, in 1/s.
 
 The suite also receives the target cell size (height or width) in centimeters.
 
